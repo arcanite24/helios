@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { HeliosComponent } from './helios.component';
+import { SmartFormComponent } from './shared/smart-form/smart-form.component';
 
 @NgModule({
-  declarations: [HeliosComponent],
+  declarations: [
+    SmartFormComponent
+  ],
   imports: [
   ],
-  exports: [HeliosComponent]
+  exports: [
+    SmartFormComponent
+  ]
 })
 export class HeliosModule { }
