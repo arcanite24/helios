@@ -141,4 +141,8 @@ export class SmartFormComponent implements OnInit {
     
   }
 
+  uploadFinished(url: string, name: string) {
+    this.rxForm.patchValue({[name]: url})
+  }
+
 }

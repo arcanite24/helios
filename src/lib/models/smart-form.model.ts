@@ -3,6 +3,9 @@ export interface HeliosSmartFormConfig<T = any> {
   id: string
   fields: HeliosSmartFormField[]
 
+  // Debug
+  showFormValue?: boolean
+
   // Hooks
   preSubmit?: (model: T) => Partial<T> | void
   postSubmit?: (model: T) => void
@@ -58,4 +61,5 @@ export enum HeliosSmartFormTypes {
   Week = 'week',
 
   TextArea = 'textarea',
+  File = 'file'
 }

@@ -6,7 +6,7 @@
     (ngSubmit)="onRxFormSubmit(rxForm.value)"
     [ngClass]="formClasses">
 
-    <div class="helios-smart-form-control" *ngFor="let field of config.fields" [ngClass]="fieldClasses">
+    <div class="helios-smart-form-control" *ngFor="let field of config.fields" [ngClass]="fieldClasses" #formFields>
 
       <!-- Native Type -->
       <div class="helios-smart-form-input" *ngIf="nativeTypes.includes(field.type)" [ngClass]="inputContainerClasses">
@@ -31,6 +31,11 @@
           [placeholder]="field.placeholder || null"
           [ngClass]="inputTagClasses"
           [formControlName]="field.name"></textarea>
+
+        <helios-smart-form-file-uploader
+          [formConfig]="config"
+          (onFinish)="uploadFinished($event, field.name)"
+          *ngIf="field.type == FieldTypes.File"></helios-smart-form-file-uploader>
         
       </div>
 
@@ -43,6 +48,8 @@
         type="submit"
         class="helios-submit-button">{{config.submitButtonText ? config.submitButtonText : defaultSubmitButtonText}}</button>
     </div>
+
+    <pre *ngIf="config.showFormValue">{{ rxForm.value | json }}</pre>
 
   </form>
 
