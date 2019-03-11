@@ -1,3 +1,53 @@
-<p>
-  smart-form works!
-</p>
+<div class="helios-smart-form">
+
+  <form
+    *ngIf="rxForm && config"
+    [formGroup]="rxForm"
+    (ngSubmit)="onRxFormSubmit(rxForm.value)"
+    [ngClass]="formClasses">
+
+    <div class="helios-smart-form-control" *ngFor="let field of config.fields" [ngClass]="fieldClasses">
+
+      <!-- Native Type -->
+      <div class="helios-smart-form-input" *ngIf="nativeTypes.includes(field.type)" [ngClass]="inputContainerClasses">
+        <label [for]="'helios-' + field.name" *ngIf="field.label">{{field.label}}</label>
+        <input 
+          [id]="'helios-' + field.name"
+          [type]="field.type" 
+          [placeholder]="field.placeholder ? field.placeholder : null" 
+          [ngClass]="inputTagClasses"
+          [formControlName]="field.name">
+      </div>
+
+      <!-- Custom Type -->
+      <div class="helios-smart-form-input" *ngIf="!nativeTypes.includes(field.type)" [ngClass]="inputContainerClasses">
+
+        <label [for]="'helios-' + field.name" *ngIf="field.label">{{field.label}}</label>
+
+        <textarea
+          *ngIf="field.type == FieldTypes.TextArea"
+          [rows]="field.rows || null"
+          [cols]="field.cols || null"
+          [placeholder]="field.placeholder || null"
+          [ngClass]="inputTagClasses"
+          [formControlName]="field.name"></textarea>
+        
+      </div>
+
+    </div>
+    
+    <div class="helios-smart-form-actions">
+      <button 
+        *ngIf="!config.hideSubmitButton"
+        [ngClass]="submitButtonClasses"
+        type="submit"
+        class="helios-submit-button">{{config.submitButtonText ? config.submitButtonText : defaultSubmitButtonText}}</button>
+    </div>
+
+  </form>
+
+  <ng-template #loader>
+    <span>Loading Helios SmartForm...</span>
+  </ng-template>
+
+</div>
