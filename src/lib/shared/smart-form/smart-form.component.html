@@ -36,6 +36,13 @@
           [formConfig]="config"
           (onFinish)="uploadFinished($event, field.name)"
           *ngIf="field.type == FieldTypes.File"></helios-smart-form-file-uploader>
+
+        <helios-smart-form-select
+          (heliosSelectChange)="heliosSelectChange(field.name, $event)"
+          [dataSource]="field.selectDataSource"
+          [field]="field"
+          [formConfig]="config"
+          *ngIf="field.type == FieldTypes.Select"></helios-smart-form-select>
         
       </div>
 

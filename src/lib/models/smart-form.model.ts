@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+
 export interface HeliosSmartFormConfig<T = any> {
 
   id: string
@@ -19,7 +21,7 @@ export interface HeliosSmartFormConfig<T = any> {
 
 }
 
-export interface HeliosSmartFormField {
+export interface HeliosSmartFormField<T = any> {
 
   // Required info
   name: string
@@ -36,6 +38,12 @@ export interface HeliosSmartFormField {
   // Info for TextArea type
   cols?: number
   rows?: number
+
+  // Select Type
+  selectDataSource?: Observable<T[]>
+  selectOptionField?: (option: T) => any | string
+  selectOptionLabel?: ((option: T) => string) | string
+  selectedValue?: (option: T) => boolean
 
 }
 
@@ -61,5 +69,6 @@ export enum HeliosSmartFormTypes {
   Week = 'week',
 
   TextArea = 'textarea',
-  File = 'file'
+  File = 'file',
+  Select = 'select'
 }

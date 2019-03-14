@@ -17,7 +17,7 @@ export class SmartFormComponent implements OnInit {
 
   public rxForm: FormGroup = this.formBuilder.group({})
 
-  // Defaults
+  // Defaults 
   public defaultSubmitButtonText = heliosDefaultSubmitButtonText
 
   public nativeTypes: HeliosSmartFormTypes[] = [
@@ -143,6 +143,10 @@ export class SmartFormComponent implements OnInit {
 
   uploadFinished(url: string, name: string) {
     this.rxForm.patchValue({[name]: url})
+  }
+
+  heliosSelectChange(name: string, value: any) {
+    this.rxForm.patchValue({ [name]: value })
   }
 
 }
