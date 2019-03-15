@@ -45,6 +45,10 @@ export interface HeliosSmartFormField<T = any> {
   selectOptionLabel?: ((option: T) => string) | string
   selectedValue?: (option: T) => boolean
 
+  // Checkbox Type
+  checkboxLabel?: string
+  checkboxSelected?: (field: HeliosSmartFormField) => boolean
+
 }
 
 export interface HeliosError {
@@ -70,5 +74,6 @@ export enum HeliosSmartFormTypes {
 
   TextArea = 'textarea',
   File = 'file',
-  Select = 'select'
+  Select = 'select',
+  Checkbox = 'checkbox',
 }

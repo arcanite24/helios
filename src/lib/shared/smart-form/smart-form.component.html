@@ -43,6 +43,13 @@
           [field]="field"
           [formConfig]="config"
           *ngIf="field.type == FieldTypes.Select"></helios-smart-form-select>
+
+        <helios-smart-form-checkbox
+          [field]="field"
+          [config]="config"
+          (heliosCheckboxChange)="heliosCheckboxChange(field.name, $event)"
+          *ngIf="field.type == FieldTypes.Checkbox"
+          ></helios-smart-form-checkbox>
         
       </div>
 

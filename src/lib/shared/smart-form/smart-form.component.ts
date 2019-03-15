@@ -149,4 +149,8 @@ export class SmartFormComponent implements OnInit {
     this.rxForm.patchValue({ [name]: value })
   }
 
+  heliosCheckboxChange(name: string, value: boolean) {
+    this.rxForm.patchValue({ [name]: value })
+  }
+
 }

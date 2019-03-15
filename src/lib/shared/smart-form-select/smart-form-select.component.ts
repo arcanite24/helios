@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { HeliosSmartFormField } from '../../models/smart-form.model';
-import { HeliosSmartFormConfig } from 'helios/public_api';
+import { HeliosSmartFormField, HeliosSmartFormConfig } from '../../models/smart-form.model';
 
 @Component({
   selector: 'helios-smart-form-select',
