@@ -9,13 +9,15 @@ import { HeliosService } from './helios.service';
 import { SmartFormFileUploaderComponent } from './smart-form-file-uploader/smart-form-file-uploader.component';
 import { SmartFormSelectComponent } from './shared/smart-form-select/smart-form-select.component';
 import { SmartFormCheckboxComponent } from './shared/smart-form-checkbox/smart-form-checkbox.component';
+import { SmartFormRadioComponent } from './shared/smart-form-radio/smart-form-radio.component';
 
 @NgModule({
   declarations: [
     SmartFormComponent,
     SmartFormFileUploaderComponent,
     SmartFormSelectComponent,
-    SmartFormCheckboxComponent
+    SmartFormCheckboxComponent,
+    SmartFormRadioComponent
   ],
   imports: [
     CommonModule,

@@ -102,3 +102,19 @@ interface LoginData {
   password: string
 }
 ```
+
+## How to Patch Form Data
+Add a Template Reference Variable in your HTML
+```html
+<helios-smart-form #testForm [config]="config" (heliosSubmit)="onSubmit($event)"></helios-smart-form>
+```
+
+Then use the @ViewChild() decorator to get the Form reference
+```typescript
+@ViewChild('testForm') private form: SmartFormComponent
+```
+
+Now you have access to the SmartForm public methods like "pathData"
+```typescript
+this.form.patchData({someField: 'Some data'})
+```

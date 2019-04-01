@@ -1,0 +1,10 @@
+<div class="helios-smart-form-radio-group" *ngIf="field.radioDataSource | async as options" [ngClass]="groupClasses">
+  
+  <div class="helios-smart-form-radio" [ngClass]="radioClasses" *ngFor="let option of options">
+    <label>
+      <input type="radio" [(ngModel)]="selectModel" [value]="getOptionValue(option)" (click)="radioChange(selectModel)" [checked]="isSelected(option)">
+      <span class="ml-2">{{getOptionLabel(option)}}</span>
+    </label>
+  </div>
+
+</div>

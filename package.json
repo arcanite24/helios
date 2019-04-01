@@ -1,6 +1,24 @@
 {
   "name": "@epsidev/helios",
-  "version": "0.0.1",
+  "description": "Build and manage Angular Forms with just a simple Typescript Object",
+  "author": "Brandon G. Neri @ EpsiDev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcanite24/helios.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arcanite24/helios/issues"
+  },
+  "homepage": "https://github.com/arcanite24/helios",
+  "keywords": [
+    "angular",
+    "smart forms",
+    "reactive forms",
+    "generate forms"
+  ],
+  "license": "MIT",
+  "version": "0.0.2",
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0"

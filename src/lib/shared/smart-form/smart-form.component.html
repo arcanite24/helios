@@ -50,6 +50,12 @@
           (heliosCheckboxChange)="heliosCheckboxChange(field.name, $event)"
           *ngIf="field.type == FieldTypes.Checkbox"
           ></helios-smart-form-checkbox>
+
+        <helios-smart-form-radio
+          [field]="field"
+          [formConfig]="config"
+          (heliosRadioChange)="heliosRadioChange(field.name, $event)"
+          *ngIf="field.type == FieldTypes.Radio"></helios-smart-form-radio>
         
       </div>
 

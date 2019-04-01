@@ -153,4 +153,12 @@ export class SmartFormComponent implements OnInit {
     this.rxForm.patchValue({ [name]: value })
   }
 
+  heliosRadioChange(name: string, value: boolean) {
+    this.rxForm.patchValue({ [name]: value })
+  }
+
+  public patchData(data: any) {
+    this.rxForm.patchValue(data)
+  }
+
 }

@@ -49,6 +49,12 @@ export interface HeliosSmartFormField<T = any> {
   checkboxLabel?: string
   checkboxSelected?: (field: HeliosSmartFormField) => boolean
 
+  // Radio Type
+  radioDataSource?: Observable<T[]>,
+  radioOptionField?: (option: T) => any | string
+  radioOptionLabel?: ((option: T) => string) | string
+  // also uses the selectedValue property
+
 }
 
 export interface HeliosError {
@@ -76,4 +82,5 @@ export enum HeliosSmartFormTypes {
   File = 'file',
   Select = 'select',
   Checkbox = 'checkbox',
+  Radio = 'radio'
 }
