@@ -1,7 +1,0 @@
-<div class="helios-smart-form-select" *ngIf="dataSource | async as options">
-  
-  <select (change)="selectChange(selectModel)" [(ngModel)]="selectModel" [ngClass]="selectClasses">
-    <option [ngValue]="getOptionValue(option)" *ngFor="let option of options">{{getOptionLabel(option)}}</option>
-  </select>
-
-</div>
